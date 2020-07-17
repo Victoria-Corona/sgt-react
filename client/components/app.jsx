@@ -1,5 +1,7 @@
 import React from 'react';
+// import ReactDOM from 'react-dom';
 import PageTitle from './header';
+import GradeTable from './GradeTable';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +17,7 @@ class App extends React.Component {
     })
       .then(response => response.json()).then(data => {
         this.setState({ grades: data });
+        // console.log(this.state.grades);
       })
       .catch(error => {
         console.error(error.message);
@@ -23,7 +26,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <PageTitle text="Student Grade Table"/>
+      <>
+        <PageTitle text="Student Grade Table"/>
+        <GradeTable grades={this.state.grades}/>
+      </>
     );
   }
 
