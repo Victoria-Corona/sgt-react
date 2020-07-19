@@ -1,6 +1,6 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
-import PageTitle from './header';
+import PageTitle from './Header';
 import GradeTable from './GradeTable';
 
 class App extends React.Component {
@@ -22,6 +22,15 @@ class App extends React.Component {
       })
       .catch(error => {
         console.error(error.message);
+      });
+  }
+
+  addGrade() {
+    fetch('api/grades', {
+      method: 'POST'
+    })
+      .then(response => response.json()).then(data => {
+        // console.log(data);
       });
   }
 
