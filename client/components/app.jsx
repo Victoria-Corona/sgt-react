@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import PageTitle from './Header';
 import GradeTable from './GradeTable';
 import GradeForm from './GradeForm';
@@ -67,8 +66,11 @@ class App extends React.Component {
     return (
       <>
         <PageTitle text="Student Grade Table" results={average}/>
-        <GradeTable grades={this.state.grades}/>
-        <GradeForm onSubmit= {this.addGrade}/>
+        <div className="row">
+          <GradeTable grades={this.state.grades}/>
+          <GradeForm onSubmit= {this.addGrade}/>
+        </div>
+
       </>
     );
   }
