@@ -1,4 +1,5 @@
 import React from 'react';
+// import GradeForm from './GradeForm';
 
 function Grade(props) {
   return (
@@ -35,7 +36,7 @@ function GradeTable(props) {
           </tbody>
         </table>
       </div>
-      <form className="col-4">
+      {/* <form className="col-4" onSubmit={handleSubmit}>
         <div className="col-auto">
           <label className="sr-only" htmlFor="name">Student Name</label>
           <div className="input-group mb-2">
@@ -79,7 +80,7 @@ function GradeTable(props) {
           <button type="submit" className="btn btn-success">Add</button>
           <button type="reset" className="btn btn-dark">Cancel</button>
         </div>
-      </form>
+      </form> */}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import PageTitle from './Header';
 import GradeTable from './GradeTable';
+import GradeForm from './GradeForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,12 +26,21 @@ class App extends React.Component {
       });
   }
 
-  addGrade() {
+  addGrade(newGrade) {
     fetch('api/grades', {
-      method: 'POST'
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newGrade)
     })
-      .then(response => response.json()).then(data => {
-        // console.log(data);
+      .then(response => response.json())
+      .then(data => {
+      /* eslint-disable no-console */
+        // console.log;
+      })
+      .catch(error => {
+        console.error(error.message);
       });
   }
 
@@ -57,6 +67,7 @@ class App extends React.Component {
       <>
         <PageTitle text="Student Grade Table" results={average}/>
         <GradeTable grades={this.state.grades}/>
+        <GradeForm onSubmit= {this.addGrade}/>
       </>
     );
   }
