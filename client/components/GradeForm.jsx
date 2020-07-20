@@ -24,9 +24,9 @@ class GradeForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const student = {
-      name: event.target.name,
-      course: event.target.course,
-      grade: event.target.grade
+      name: this.state.name,
+      course: this.state.course,
+      grade: parseFloat(this.state.grade)
     };
     this.props.onSubmit(student);
     this.setState({
@@ -37,9 +37,6 @@ class GradeForm extends React.Component {
   }
 
   render() {
-    // const name = this.state.name;
-    // const course = this.state.course;
-    // const grade = this.state.grade;
     return (
       <form className="col-4" onSubmit={this.handleSubmit}>
         <div className="col-auto">

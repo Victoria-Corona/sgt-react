@@ -11,6 +11,7 @@ class App extends React.Component {
       grades: []
     };
     this.getAverageGrade = this.getAverageGrade.bind(this);
+    this.addGrade = this.addGrade.bind(this);
   }
 
   componentDidMount() {
@@ -34,10 +35,9 @@ class App extends React.Component {
       },
       body: JSON.stringify(newGrade)
     })
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
-      /* eslint-disable no-console */
-        // console.log;
+        this.setState({ grades: this.state.grades.concat(data) });
       })
       .catch(error => {
         console.error(error.message);
@@ -51,8 +51,9 @@ class App extends React.Component {
 
     for (let indexGrade = 0; indexGrade < arrayGrades.length; indexGrade++) {
       sumOfGrades += arrayGrades[indexGrade].grade;
-      results = Math.floor(sumOfGrades / arrayGrades.length);
     }
+
+    results = Math.floor(sumOfGrades / arrayGrades.length);
 
     if (arrayGrades.length === 0) {
       results = 'N/A';
