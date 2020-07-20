@@ -43,6 +43,23 @@ class App extends React.Component {
       });
   }
 
+  deleteGrade(deletedGrade) {
+    fetch('api/grades/id', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(deletedGrade)
+    })
+      .then(res => res.json())
+      .then(data => {
+        return data;
+      })
+      .catch(error => {
+        console.error(error.message);
+      });
+  }
+
   getAverageGrade(grades) {
     const arrayGrades = this.state.grades;
     let sumOfGrades = 0;
