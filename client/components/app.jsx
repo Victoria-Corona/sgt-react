@@ -85,8 +85,8 @@ class App extends React.Component {
       <>
         <PageTitle text="Student Grade Table" results={average}/>
         <div className="row">
-          <GradeTable grades={this.state.grades}/>
-          <GradeForm onSubmit= {this.addGrade} onClick={this.deleteGrade}/>
+          <GradeTable grades={this.state.grades} onClick={this.deleteGrade}/>
+          <GradeForm onSubmit= {this.addGrade}/>
         </div>
 
       </>
