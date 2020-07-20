@@ -12,27 +12,28 @@ function Grade(props) {
 
 function GradeTable(props) {
   return (
-    <table className="table table-striped table-bordered">
-      <thead className="thead-dark">
-        <tr>
-          <th>Student Name</th>
-          <th>Course</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          props.grades.map(grade => {
-            return <Grade key={grade.name}
-              name={grade.name}
-              course={grade.course}
-              grade={grade.grade}
-            />;
-          })
-        }
-      </tbody>
-    </table>
-
+    <div className="col-8">
+      <table className="table table-striped table-bordered">
+        <thead className="thead-dark">
+          <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            props.grades.map(grade => {
+              return <Grade key={grade.name}
+                name={grade.name}
+                course={grade.course}
+                grade={grade.grade}
+              />;
+            })
+          }
+        </tbody>
+      </table>
+    </div>
   );
 }
 
