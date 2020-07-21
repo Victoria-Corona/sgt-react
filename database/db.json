@@ -21,14 +21,8 @@
     {
       "name": "Student 01",
       "course": "Dev",
-      "grade": 20,
+      "grade": 100,
       "id": 33
-    },
-    {
-      "name": "Student 02",
-      "course": "Dev",
-      "grade": 93,
-      "id": 34
     }
   ]
 }
